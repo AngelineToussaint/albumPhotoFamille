@@ -1,0 +1,17 @@
+* {
+    outline:none;
+}
+
+
+/*Footer*/
+.footer{
+    border-top: 5px solid #333;
+    background: #626262;
+    text-align: center;
+    height: 50px;
+}
+.footer h6 {
+    color: #ffffff;
+    margin: 18px 0 0 0;
+    font-size: 14px;
+}
