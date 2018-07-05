@@ -2,9 +2,13 @@
     outline:none;
 }
 
+/*Title*/
+.title {
+    text-align: center;
+}
 
 /*Footer*/
-.footer{
+.footer {
     border-top: 5px solid #333;
     background: #626262;
     text-align: center;
