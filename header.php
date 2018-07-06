@@ -17,24 +17,34 @@
             <li>
                 <a href="">Accueil</a>
             </li>
-            <li>
-                <a href="">Connexion</a>
-            </li>
-            <li>
-                <a href="">Inscription</a>
-            </li>
-            <li>
-                <a href="">Mon album</a>
-            </li>
-            <li>
-                <a href="">Albums partagés</a>
-            </li>
-            <li>
-                <a href="">Notifications</a>
-            </li>
-            <li>
-                <a href="">Déconnexion</a>
-            </li>
+            <?php
+            if(!isset($_SESSION["utilisateur"])){
+                ?>
+                <li>
+                    <a href="">Connexion</a>
+                </li>
+                <li>
+                    <a href="">Inscription</a>
+                </li>
+                <?php
+            }
+            else{
+                ?>
+                <li>
+                    <a href="">Mon album</a>
+                </li>
+                <li>
+                    <a href="">Albums partagés</a>
+                </li>
+                <li>
+                    <a href="">Notifications</a>
+                </li>
+                <li>
+                    <a href="">Déconnexion</a>
+                </li>
+                <?php
+            }
+            ?>
         </ul>
     </div>
     <hr class="clear">
