@@ -2,10 +2,80 @@
     outline:none;
 }
 
+/*Body*/
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
 /*Title*/
 .title {
     text-align: center;
 }
+
+/*Backgrounds*/
+#login .background, #register .background {
+    background-image: url("img/background.jpg");
+}
+
+/*Home*/
+#home .row {
+    display: flex;
+    text-align: center;
+}
+#home .row .col {
+    position: relative;
+}
+#home .row .col .content {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+#home .row .col .content h1 {
+    text-shadow: 2px 2px #333;
+    color: #fff;
+}
+
+#home .row > .col {
+    width: 50%;
+}
+
+#home .row > .col > img {
+    width: 100%;
+    height: 100%;
+}
+
+#home .r1 > .col:nth-child(2) {
+    background-color: #aeccf7;
+}
+
+#home .r2 > .col:nth-child(1) {
+    background-color: #aeccf7;
+}
+
+#home .r3 > .btn {
+    text-decoration: none;
+    color: #ffffff;
+    line-height: 100px;
+    font-size: 30px;
+    text-shadow: 2px 1px #868187;
+    border-top: 3px solid #666666;
+    border-bottom: 3px solid #666666;
+}
+
+#home .r3 > .btn:nth-child(1){
+    background-color: #858585;
+}
+
+#home .r3 > .btn:nth-child(2){
+    background-color: #9c9c9c;
+}
+
+#home .r4 > .col:nth-child(1){
+    background-color: #aeccf7;
+}
+
 
 /*Footer*/
 .footer {
