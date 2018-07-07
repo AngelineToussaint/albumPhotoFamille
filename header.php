@@ -18,7 +18,7 @@
                         <a href="?page=home">Accueil</a>
                     </li>
                     <?php
-                    if(!isset($_SESSION["utilisateur"])){
+                    if(!isset($_SESSION['user'])){
                         ?>
                         <li>
                             <a href="?page=login">Connexion</a>
@@ -40,7 +40,7 @@
                             <a href="">Notifications</a>
                         </li>
                         <li>
-                            <a href="">Déconnexion</a>
+                            <a href="?page=disconnect">Déconnexion</a>
                         </li>
                         <?php
                     }

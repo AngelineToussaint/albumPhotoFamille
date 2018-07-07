@@ -21,14 +21,20 @@
             <img src="img/share.jpg" style="width: 100%">
         </div>
     </div>
-    <div class="row r3">
-        <a class="col btn" href="?page=register">
+    <?php
+    if(!isset($_SESSION['user'])){
+        ?>
+        <div class="row r3">
+            <a class="col btn" href="?page=register">
             INSCRIPTION
-        </a>
-        <a class="col btn" href="?page=login">
+            </a>
+            <a class="col btn" href="?page=login">
             CONNEXION
-        </a>
-    </div>
+            </a>
+        </div>
+        <?php
+    }
+    ?>
     <div class="row r4">
         <div class="col">
             <div class="content">

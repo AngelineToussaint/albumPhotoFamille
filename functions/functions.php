@@ -14,3 +14,8 @@ function router() {
         include 'pages/error404.php';
     }
 }
+
+function redirect($page) {
+    header('location: ?page='.$page);
+    die();
+}

@@ -1,15 +1,24 @@
-<div id="login">
-    <div class="content">
-        <h1>Connexion</h1>
-        <?php
-        if (isset($_GET['connexion']) && $_GET['connexion'] == 'false'){
-            echo '<p style="color: red;">Email ou mot de passe incorrect</p>';
-        }
-        ?>
-        <form method="post" action="?page=connexion_db">
-            <input type="email" name="email" placeholder="Email"><br>
-            <input type="password" name="mdp" placeholder="Mot de passe"><br>
-            <input type="submit" value="Se connecter">
-        </form>
+<?php
+if (empty($_POST)){
+?>
+    <div id="login">
+        <div class="content">
+            <h1>Connexion</h1>
+            <?php
+            if(isset($_GET['error']) && $_GET['error'] == 'bad_login'){
+                echo 'Email ou mot de passe incorrect';
+            }
+            ?>
+            <form method="post" action="">
+                <input type="email" name="email" placeholder="Email"><br>
+                <input type="password" name="pw" placeholder="Mot de passe"><br>
+                <input type="submit" value="Se connecter">
+            </form>
+        </div>
     </div>
-</div>
+    <?php
+}
+else{
+    login($_POST);
+}
+?>
