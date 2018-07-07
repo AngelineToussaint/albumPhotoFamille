@@ -15,8 +15,8 @@ if (empty($_POST)){
             <form method="post" action="">
                 <input type="text" name="lastname" placeholder="Nom"><br>
                 <input type="text" name="firstname" placeholder="Prénom"><br>
-                <input type="email" name="email" placeholder="Email"><br>
-                <input type="password" name="pw" placeholder="Mot de passe"><br>
+                <input type="email" name="email" required placeholder="Email"><br>
+                <input type="password" name="pw" required placeholder="Mot de passe"><br>
                 <input type="submit" value="S'inscrire">
             </form>
         </div>

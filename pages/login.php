@@ -10,8 +10,8 @@ if (empty($_POST)){
             }
             ?>
             <form method="post" action="">
-                <input type="email" name="email" placeholder="Email"><br>
-                <input type="password" name="pw" placeholder="Mot de passe"><br>
+                <input type="email" name="email" required placeholder="Email"><br>
+                <input type="password" name="pw" required placeholder="Mot de passe"><br>
                 <input type="submit" value="Se connecter">
             </form>
         </div>

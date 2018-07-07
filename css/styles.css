@@ -51,12 +51,38 @@ body {
 
 .menu ul li {
     display: inline; /*show in line*/
+    position: relative;
 }
 .menu ul li a {
     margin: 0 15px;
     color: #333333;
     text-decoration: none;
     font-weight: bold;
+}
+
+.menu .submenu {
+    display: none;
+}
+
+.menu li:hover .submenu {
+    display: grid;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    z-index: 100000;
+    width: 200px;
+}
+
+.menu .submenu li:first-child {
+    margin-top: 33.5px;
+}
+
+.menu .submenu li {
+    background: #a0aebf;
+    color: #ffffff;
+    border: 2px solid #454d59;
+    border-top: none;
 }
 
 /*Title*/
@@ -127,8 +153,8 @@ body {
     background-color: #aeccf7;
 }
 
-/*Register/Login*/
-#register, #login{
+/*Register/Login/AddAlbum*/
+#register, #login, #addAlbum{
     background-image: url("../img/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -138,7 +164,7 @@ body {
     margin: 0;
 }
 
-#login .content, #register .content {
+#login .content, #register .content, #addAlbum .content {
     position: absolute;
     background: #ffffff;
     width: 30%;

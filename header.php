@@ -31,7 +31,23 @@
                     else{
                         ?>
                         <li>
-                            <a href="">Mon album</a>
+                            <a href="?page=albums">Mes albums</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="?page=add_album">Ajouter un album</a>
+                                </li>
+                                <?php
+                                $albums = getAlbumsOfUser($_SESSION['user']['id']);
+
+                                foreach ($albums as $album){
+                                    ?>
+                                    <li>
+                                        <a href="?page=album&id=<?php echo $album['id'] ?>"><?php echo $album['name'] ?></a>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
+                            </ul>
                         </li>
                         <li>
                             <a href="">Albums partagés</a>
