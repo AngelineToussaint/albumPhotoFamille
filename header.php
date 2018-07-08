@@ -5,6 +5,7 @@
     <title>Album photo familial</title>
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 <body>
     <div class="page">
