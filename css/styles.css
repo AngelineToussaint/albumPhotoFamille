@@ -161,7 +161,7 @@ body {
     background-color: #aeccf7;
 }
 
-/*Register/Login/AddAlbum/albums*/
+/*Register/Login/AddAlbum/albums/album*/
 #register, #login, #addAlbum, #albums {
     background-image: url("../img/background.jpg");
     background-size: cover;
@@ -213,6 +213,20 @@ input[type=submit], button {
 
 #albums .link i {
     margin-right: 10px;
+}
+
+/*Album*/
+#album {
+    text-align: center;
+}
+
+#album i {
+    margin-right: 10px;
+}
+
+#album button {
+    background: #4e9cff;
+    color: #ffffff;
 }
 
 

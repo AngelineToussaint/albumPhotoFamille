@@ -15,5 +15,11 @@ function getAlbumsOfUser($user_id){
     return $albums;
 }
 
+function addFolder($title, $album_id){
+    Database::exec('INSERT INTO folder(name,date, album_id) VALUES (?, ?, ?)',[
+        $title, time(), $album_id
+    ]);
+    redirect('album&id='.$album_id);
+}
 
 
