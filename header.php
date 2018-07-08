@@ -32,7 +32,10 @@
                     else{
                         ?>
                         <li>
-                            <a href="?page=albums">Mes albums</a>
+                            <a href="?page=albums">
+                                Mes albums
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </a>
                             <ul class="submenu">
                                 <li>
                                     <a href="?page=add_album">Ajouter un album</a>

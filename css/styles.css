@@ -60,6 +60,14 @@ body {
     font-weight: bold;
 }
 
+.menu ul li a i {
+    transition: all 0.6s;
+}
+
+.menu ul li:hover > a > i {
+    transform: rotate(180deg);
+}
+
 .menu .submenu {
     display: none;
 }
