@@ -22,4 +22,10 @@ function addFolder($title, $album_id){
     redirect('album&id='.$album_id);
 }
 
+function getFolder($album_id){
+    $folders = Database::query('SELECT * FROM folder WHERE album_id = ?',[
+        $album_id
+    ]);
+    return $folders;
+}
 

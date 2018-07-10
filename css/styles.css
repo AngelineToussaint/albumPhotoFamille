@@ -229,6 +229,15 @@ input[type=submit], button {
     color: #ffffff;
 }
 
+#album .form_folder {
+    display: none;
+}
+
+#album .folder button {
+    background: #4e9cff;
+    color: #ffffff;    background: #0f3eff;
+    color: #ffffff;
+}
 
 /*Footer*/
 .footer {
