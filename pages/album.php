@@ -53,9 +53,13 @@ $album  = Database::queryFirst('SELECT * FROM album WHERE id = ?',[
 
     <?php
     if (isset($_GET['folder_id'])) {
-        ?>
-
-        <?php
+        $pictures = getPictures($_GET['folder_id']);
+        foreach ($pictures as $picture) {
+            ?>
+            <div class="picture" style="background-image: url('img/upload/<?php echo $picture['picture'] ?>')">
+            </div>
+            <?php
+        }
     }
     ?>
 </div>

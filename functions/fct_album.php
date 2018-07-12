@@ -40,5 +40,14 @@ function addPicture($title, $description, $picture, $folder_id, $album_id){
         $title, $description, time(), $nameFile, $folder_id
     ]);
 
-    redirect('album&id='. $album_id);
+    redirect('album&id='. $album_id .'&folder_id='. $folder_id);
+}
+
+function getPictures($folder_id)
+{
+    $getPictures = Database::query('SELECT * FROM picture WHERE folder_id = ?', [
+        $folder_id
+    ]);
+
+    return $getPictures;
 }

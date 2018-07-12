@@ -250,6 +250,21 @@ input[type=submit], button {
     color: #ffffff;
 }
 
+/*Pictures*/
+#album .picture {
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
+    width: 33%;
+    height: 400px;
+}
+
+@media screen and (max-width: 900px) {
+    #album .picture {
+        width: 100%;
+    }
+}
+
 /*Footer*/
 .footer {
     border-top: 5px solid #333;

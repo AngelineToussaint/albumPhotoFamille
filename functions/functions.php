@@ -36,3 +36,4 @@ function upload($file, $size, $extensions) {
 
     return $nameFile;
 }
+
