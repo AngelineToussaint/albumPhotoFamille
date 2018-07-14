@@ -56,12 +56,18 @@ $album  = Database::queryFirst('SELECT * FROM album WHERE id = ?',[
         $pictures = getPictures($_GET['folder_id']);
         foreach ($pictures as $picture) {
             ?>
-            <div class="picture" style="background-image: url('img/upload/<?php echo $picture['picture'] ?>')">
+            <div class="picture" data-id="<?php echo $picture['id'] ?>" style="background-image: url('img/upload/<?php echo $picture['picture'] ?>')">
+            </div>
+            <div class="lightbox <?php echo $picture['id'] ?>" style="display: none">
+                <img src="img/upload/<?php echo $picture['picture'] ?>">
             </div>
             <?php
         }
     }
     ?>
+    <div class="background-lightbox" style="display: none">
+        <i class="fa fa-times fa-3x close_lightbox"></i>
+    </div>
 </div>
 
 
@@ -69,6 +75,17 @@ $album  = Database::queryFirst('SELECT * FROM album WHERE id = ?',[
     $(document).ready(function () {
         $('.add_folder').click(function () {
             $('.form_folder').slideToggle(300);
+        });
+
+        $('.picture').click(function (){
+            var id = $(this).data('id');
+            $('.lightbox.' + id).fadeIn(200);
+            $('.background-lightbox').fadeIn(200);
+        });
+
+        $('.close_lightbox').click(function(){
+            $('.lightbox').fadeOut(200);
+            $('.background-lightbox').fadeOut(200);
         });
     })
 </script>
