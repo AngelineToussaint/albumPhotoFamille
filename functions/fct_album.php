@@ -43,6 +43,32 @@ function addPicture($title, $description, $picture, $folder_id, $album_id){
     redirect('album&id='. $album_id .'&folder_id='. $folder_id);
 }
 
+function shareAlbum($email, $album_id){
+    $user = Database::queryFirst('SELECT * FROM user WHERE email = ?', [
+       $email
+    ]);
+
+    // If user does not exist with this email or the user is the logged user
+    if ($user == null || $user['id'] == $_SESSION['user']['id']){
+        redirect('share_album&album_id=' . $album_id .'&error=no_user');
+    }
+
+    $share = Database::queryFirst('SELECT * FROM album_share WHERE user_id = ? AND album_id = ?', [
+       $user['id'], $album_id
+    ]);
+
+    // If the album is already shared to this user
+    if ($share != null) {
+        redirect('share_album&album_id=' . $album_id .'&error=already_shared');
+    }
+
+    Database::exec('INSERT INTO album_share(album_id, user_id) VALUES (?,?)', [
+        $album_id, $user['id']
+    ]);
+
+    redirect('album&id=' . $album_id);
+}
+
 function getPictures($folder_id)
 {
     $getPictures = Database::query('SELECT * FROM picture WHERE folder_id = ?', [
