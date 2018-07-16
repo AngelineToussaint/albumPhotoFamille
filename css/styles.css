@@ -299,8 +299,21 @@ input[type=submit], button {
     color: #ffffff;
     cursor: pointer;
     position: fixed;
+}
+
+#album .background-lightbox i.close_lightbox {
     top: 5px;
     right: 5px;
+}
+
+#album .background-lightbox i.prev_picture {
+    top: 50%;
+    left: 50px;
+}
+
+#album .background-lightbox i.next_picture {
+    top: 50%;
+    right: 50px;
 }
 
 /*Footer*/

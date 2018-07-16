@@ -67,6 +67,9 @@ $album  = Database::queryFirst('SELECT * FROM album WHERE id = ?',[
     ?>
     <div class="background-lightbox" style="display: none">
         <i class="fa fa-times fa-3x close_lightbox"></i>
+
+        <i class="fa fa-chevron-left fa-3x switch_picture prev_picture"></i>
+        <i class="fa fa-chevron-right fa-3x switch_picture next_picture"></i>
     </div>
 </div>
 
@@ -79,13 +82,50 @@ $album  = Database::queryFirst('SELECT * FROM album WHERE id = ?',[
 
         $('.picture').click(function (){
             var id = $(this).data('id');
-            $('.lightbox.' + id).fadeIn(200);
+            $('.lightbox.' + id).addClass('show').fadeIn(200);
             $('.background-lightbox').fadeIn(200);
         });
 
         $('.close_lightbox').click(function(){
-            $('.lightbox').fadeOut(200);
+            $('.lightbox').removeClass('show').fadeOut(200);
             $('.background-lightbox').fadeOut(200);
         });
+
+        $('.switch_picture').click(function () {
+
+            // Index of the lightbox showing
+            var index = 0,
+                lightboxs = $('.lightbox');
+
+            for (var i = 0; i < lightboxs.length; i++) {
+                if (lightboxs.eq(i).hasClass('show')) {
+                    index = i;
+                }
+            }
+
+            if ($(this).hasClass('next_picture')) {
+                if (lightboxs.length == (index + 1)) {
+                    // Get the first lightbox, if length of lightboxs is equal to the next lightbox
+                    var lightboxToShow = lightboxs.eq(0);
+                }
+                else {
+                    // Else, get the next lightbox
+                    var lightboxToShow = lightboxs.eq(index + 1);
+                }
+            }
+            else {
+                if (index == 0) {
+                    // Get the last lightbox, if the lightbox showing is the first
+                    var lightboxToShow = lightboxs.eq(lightboxs.length - 1);
+                }
+                else {
+                    // Else, get the previous lightbox
+                    var lightboxToShow = lightboxs.eq(index - 1);
+                }
+            }
+
+            $('.lightbox').removeClass('show').fadeOut(200);
+            lightboxToShow.addClass('show').fadeIn(200);
+        })
     })
 </script>
