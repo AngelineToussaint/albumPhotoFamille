@@ -57,7 +57,23 @@
                             <a href="?page=album_shared">Albums partagés</a>
                         </li>
                         <li>
-                            <a href="">Notifications</a>
+                            <?php
+                            $albumsShared = getAlbumsShared();
+                            $numberNotif = 0;
+                            foreach ($albumsShared as $albumShared){
+                                if ($albumShared['view'] == 0){
+                                    $numberNotif++;
+                                }
+                            }
+                            ?>
+                            <a href="?page=notifications">
+                                Notifications
+                                <?php
+                                if ($numberNotif > 0){
+                                    echo '('.$numberNotif.')';
+                                }
+                                ?>
+                            </a>
                         </li>
                         <li>
                             <a href="?page=disconnect">Déconnexion</a>

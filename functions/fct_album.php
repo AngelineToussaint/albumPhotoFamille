@@ -62,7 +62,7 @@ function shareAlbum($email, $album_id){
         redirect('share_album&album_id=' . $album_id .'&error=already_shared');
     }
 
-    Database::exec('INSERT INTO album_share(album_id, user_id) VALUES (?,?)', [
+    Database::exec('INSERT INTO album_share(view, album_id, user_id) VALUES (0, ?, ?)', [
         $album_id, $user['id']
     ]);
 
@@ -83,4 +83,10 @@ function getAlbumsShared(){
         $_SESSION['user']['id']
     ]);
     return $albumsShared;
+}
+
+function removeNotifications(){
+    Database::exec('UPDATE album_share SET view = 1 WHERE user_id = ?', [
+        $_SESSION['user']['id']
+    ]);
 }

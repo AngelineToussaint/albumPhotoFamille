@@ -322,6 +322,17 @@ input[type=submit], button {
     right: 50px;
 }
 
+/*Notification*/
+#notification h1 {
+    text-align: center;
+}
+
+#notification .notif {
+    padding: 20px;
+    border: 1px solid #454d59;
+    text-align: center;
+}
+
 /*Footer*/
 .footer {
     border-top: 5px solid #333;
