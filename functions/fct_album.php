@@ -77,3 +77,10 @@ function getPictures($folder_id)
 
     return $getPictures;
 }
+
+function getAlbumsShared(){
+    $albumsShared = Database::query('SELECT * FROM album_share, album WHERE album_share.album_id = album.id AND album_share.user_id = ?',[
+        $_SESSION['user']['id']
+    ]);
+    return $albumsShared;
+}

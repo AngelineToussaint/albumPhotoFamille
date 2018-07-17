@@ -54,7 +54,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="">Albums partagés</a>
+                            <a href="?page=album_shared">Albums partagés</a>
                         </li>
                         <li>
                             <a href="">Notifications</a>

@@ -162,7 +162,7 @@ body {
 }
 
 /*Register/Login/AddAlbum/Albums/Album/AddPicture/ShareAlbum*/
-#register, #login, #addAlbum, #albums, #addPicture, #shareAlbum {
+#register, #login, #addAlbum, #albums, #addPicture, #shareAlbum, #albumsShared {
     background-image: url("../img/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -172,7 +172,7 @@ body {
     margin: 0;
 }
 
-#login .content, #register .content, #addAlbum .content, #albums .content, #addPicture .content, #shareAlbum .content {
+#login .content, #register .content, #addAlbum .content, #albums .content, #addPicture .content, #shareAlbum .content, #albumsShared .content {
     position: absolute;
     background: #ffffff;
     width: 30%;
@@ -199,19 +199,19 @@ input[type=submit], button {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
-/*Albums*/
+/*Albums/AlbumsShared*/
 
-#albums .link a {
+#albums .link a, #albumsShared .link a {
     text-decoration: none;
     font-size: 25px;
     color: #333333;
 }
 
-#albums .link {
+#albums .link, #albumsShared .link {
     margin: 10px 0;
 }
 
-#albums .link i {
+#albums .link i, #albumsShared .link i {
     margin-right: 10px;
 }
 
