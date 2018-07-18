@@ -322,12 +322,12 @@ input[type=submit], button {
     right: 50px;
 }
 
-/*Notification*/
-#notification h1 {
+/*Notification/UsersShared*/
+#notification h1, #usersShared h1 {
     text-align: center;
 }
 
-#notification .notif {
+#notification .notif, #usersShared .user {
     padding: 20px;
     border: 1px solid #454d59;
     text-align: center;

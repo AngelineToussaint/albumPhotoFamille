@@ -90,3 +90,16 @@ function removeNotifications(){
         $_SESSION['user']['id']
     ]);
 }
+
+function usersShared($album_id){
+    $usersShared = Database::query('SELECT * FROM album_share, user WHERE album_id = ? AND album_share.user_id = user.id', [
+        $album_id
+    ]);
+    return $usersShared;
+}
+
+function deleteUserShared($album_id, $user_id){
+    Database::exec('DELETE FROM album_share WHERE album_id = ? AND user_id = ?', [
+        $album_id, $user_id
+    ]);
+}

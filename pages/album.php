@@ -21,12 +21,22 @@ $album  = Database::queryFirst('SELECT * FROM album WHERE id = ?',[
             </a>
         </div>
         <div class="share_album">
-            <a href="?page=share_album&album_id=<?php echo $album['id'] ?>">
-                <button>
-                    <i class="fa fa-share" aria-hidden="true"></i>
-                    Partager mon album
-                </button>
-            </a>
+            <div>
+                <a href="?page=share_album&album_id=<?php echo $album['id'] ?>">
+                    <button>
+                        <i class="fa fa-share" aria-hidden="true"></i>
+                        Partager mon album
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="?page=user_shared&album_id=<?php echo $album['id'] ?>">
+                    <button>
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        Liste des personnes partagées
+                    </button>
+                </a>
+            </div>
         </div>
     </div>
 
