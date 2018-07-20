@@ -70,12 +70,17 @@ $album  = Database::queryFirst('SELECT * FROM album WHERE id = ?',[
         ?>
     </div>
 
+
     <?php
     if (isset($_GET['folder_id'])) {
         $pictures = getPictures($_GET['folder_id']);
         foreach ($pictures as $picture) {
             ?>
             <div class="picture" data-id="<?php echo $picture['id'] ?>" style="background-image: url('img/upload/<?php echo $picture['picture'] ?>')">
+                <div style="opacity: 0;">
+                    <h2><?php echo $picture['title'] ?></h2>
+                    <p><?php echo $picture['description'] ?></p>
+                </div>
             </div>
             <div class="lightbox <?php echo $picture['id'] ?>" style="display: none">
                 <img src="img/upload/<?php echo $picture['picture'] ?>">

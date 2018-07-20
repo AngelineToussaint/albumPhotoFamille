@@ -273,6 +273,11 @@ input[type=submit], button {
     opacity: 0.8;
 }
 
+#album .picture:hover div {
+    transition: all 0.4s;
+    opacity: 1!important;
+}
+
 @media screen and (max-width: 900px) {
     #album .picture {
         width: 100%;

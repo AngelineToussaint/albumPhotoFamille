@@ -43,15 +43,15 @@
             </div>
         </div>
         <div class="col">
-            <img src="https://lemag.nikonclub.fr/wp-content/uploads/2016/11/Photo-selection-pour-Nikon-France-Mattia-Bonavida-2016-8.jpg">
+            <img src="img/myAlbums.PNG">
         </div>
     </div>
     <div class="row r5">
         <div class="col">
-            <img src="https://lemag.nikonclub.fr/wp-content/uploads/2016/11/Photo-selection-pour-Nikon-France-Mattia-Bonavida-2016-8.jpg">
+            <img src="img/travels.PNG">
         </div>
         <div class="col">
-            <img src="https://lemag.nikonclub.fr/wp-content/uploads/2016/11/Photo-selection-pour-Nikon-France-Mattia-Bonavida-2016-8.jpg">
+            <img src="img/albumShare.PNG">
         </div>
     </div>
 </div>
