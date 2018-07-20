@@ -161,8 +161,8 @@ body {
     background-color: #aeccf7;
 }
 
-/*Register/Login/AddAlbum/Albums/Album/AddPicture/ShareAlbum*/
-#register, #login, #addAlbum, #albums, #addPicture, #shareAlbum, #albumsShared {
+/*Register/Login/AddAlbum/Albums/Album/AddPicture/ShareAlbum/NoAccess*/
+#register, #login, #addAlbum, #albums, #addPicture, #shareAlbum, #albumsShared, #noAccess {
     background-image: url("../img/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -172,7 +172,7 @@ body {
     margin: 0;
 }
 
-#login .content, #register .content, #addAlbum .content, #albums .content, #addPicture .content, #shareAlbum .content, #albumsShared .content {
+#login .content, #register .content, #addAlbum .content, #albums .content, #addPicture .content, #shareAlbum .content, #albumsShared .content, #noAccess .content {
     position: absolute;
     background: #ffffff;
     width: 30%;

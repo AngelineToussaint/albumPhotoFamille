@@ -1,4 +1,6 @@
 <?php
+checkAccess($_GET['album_id']);
+
 if(isset($_GET['delete'])){
     deleteUserShared($_GET['album_id'], $_GET['delete']);
 }

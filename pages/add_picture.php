@@ -1,4 +1,5 @@
 <?php
+checkAccess($_GET['album_id']);
 
 if(empty($_POST)) {
     ?>
