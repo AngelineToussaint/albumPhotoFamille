@@ -41,7 +41,7 @@
                                     <a href="?page=add_album">Ajouter un album</a>
                                 </li>
                                 <?php
-                                $albums = getAlbumsOfUser($_SESSION['user']['id']);
+                                $albums = Album::getByUserId($_SESSION['user']['id']);
 
                                 foreach ($albums as $album){
                                     ?>
@@ -58,7 +58,7 @@
                         </li>
                         <li>
                             <?php
-                            $albumsShared = getAlbumsShared();
+                            $albumsShared = ShareAlbum::getByUserId($_SESSION['user']['id']);
                             $numberNotif = 0;
                             foreach ($albumsShared as $albumShared){
                                 if ($albumShared['view'] == 0){

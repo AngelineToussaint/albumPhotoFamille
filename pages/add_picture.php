@@ -33,6 +33,7 @@ if(empty($_POST)) {
     </div>
     <?php
 } else {
-    addPicture($_POST['title'], $_POST['description'], $_FILES['picture'], $_POST['folder_id'], $_GET['album_id']);
+    $picture = new Picture($_POST['title'], $_POST['description'], $_FILES['picture'], $_POST['folder_id']);
+    $picture->add($_GET['album_id']);
 }
 ?>

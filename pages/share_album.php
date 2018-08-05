@@ -25,6 +25,13 @@ if(empty($_POST)) {
     </div>
     <?php
 } else {
-    shareAlbum($_POST['email'], $_GET['album_id']);
+    $user = User::getByEmail($_POST['email']);
+
+    if ($user == null || $user['id'] == $_SESSION['user']['id']) {
+        redirect('share_album&album_id=' . $_GET['album_id'] .'&error=no_user');
+    }
+
+    $shareAlbum = new ShareAlbum($_GET['album_id'], $user['id']);
+    $shareAlbum->add();
 }
 ?>

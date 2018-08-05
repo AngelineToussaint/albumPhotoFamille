@@ -13,6 +13,7 @@ if(empty($_POST)) {
     </div>
     <?php
 } else {
-    addAlbum($_POST);
+    $album = new Album($_POST['name'], $_SESSION['user']['id']);
+    $album->add();
 }
 ?>

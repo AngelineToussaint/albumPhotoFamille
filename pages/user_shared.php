@@ -2,13 +2,14 @@
 checkAccess($_GET['album_id']);
 
 if(isset($_GET['delete'])){
-    deleteUserShared($_GET['album_id'], $_GET['delete']);
+    $shareAlbum = new ShareAlbum($_GET['album_id'], $_GET['delete']);
+    $shareAlbum->delete();
 }
 ?>
 <div id="usersShared">
     <h1>Liste des personnes partagées</h1>
     <?php
-    $usersShared = usersShared($_GET['album_id']);
+    $usersShared = ShareAlbum::getUserSharedByAlbumId($_GET['album_id']);
 
     foreach ($usersShared as $user){
         ?>

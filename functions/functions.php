@@ -37,3 +37,24 @@ function upload($file, $size, $extensions) {
     return $nameFile;
 }
 
+function checkAccess($album_id){
+    $access = false;
+    $album  = Database::queryFirst('SELECT * FROM album WHERE id = ?',[
+        $album_id
+    ]);
+    if ($album != null){
+        if ($album['user_id'] == $_SESSION['user']['id']){
+            $access = true;
+        }
+        $album_share = Database::queryFirst('SELECT * FROM album_share WHERE album_id = ? AND user_id = ?', [
+            $album_id, $_SESSION['user']['id']
+        ]);
+        if ($album_share != null){
+            $access = true;
+        }
+    }
+
+    if (!$access){
+        redirect('no_access');
+    }
+}

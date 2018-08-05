@@ -47,12 +47,12 @@ $album  = Database::queryFirst('SELECT * FROM album WHERE id = ?',[
         Ajouter un dossier
     </button>
     <form method="post" action="?page=add_folder&id=<?php echo $album['id'] ?>" class="form_folder">
-        <input type="text" name="title" placeholder="Titre du dossier">
+        <input type="text" name="name" placeholder="Titre du dossier">
         <input type="submit">
     </form>
 
     <?php
-    $folders = getFolder($_GET['id']);
+    $folders = Folder::getByAlbumId($_GET['id']);
     ?>
     <div class="folder">
         <?php
@@ -73,7 +73,7 @@ $album  = Database::queryFirst('SELECT * FROM album WHERE id = ?',[
 
     <?php
     if (isset($_GET['folder_id'])) {
-        $pictures = getPictures($_GET['folder_id']);
+        $pictures = Picture::getByFolderId($_GET['folder_id']);
         foreach ($pictures as $picture) {
             ?>
             <div class="picture" data-id="<?php echo $picture['id'] ?>" style="background-image: url('img/upload/<?php echo $picture['picture'] ?>')">

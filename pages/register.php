@@ -24,6 +24,7 @@ if (empty($_POST)){
     <?php
 }
 else{
-    register($_POST);
+    $user = new User($_POST['email'], $_POST['pw'], $_POST['lastname'], $_POST['firstname']);
+    $user->add();
 }
 ?>

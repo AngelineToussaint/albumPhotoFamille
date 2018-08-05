@@ -19,6 +19,7 @@ if (empty($_POST)){
     <?php
 }
 else{
-    login($_POST);
+    $user = new User($_POST['email'], $_POST['pw']);
+    $user->login();
 }
 ?>

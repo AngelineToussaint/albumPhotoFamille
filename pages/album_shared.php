@@ -2,7 +2,7 @@
     <div class="content">
         <h1>Albums Partagés avec moi</h1>
         <?php
-        $albums = getAlbumsShared();
+        $albums = ShareAlbum::getByUserId($_SESSION['user']['id']);
 
         foreach ($albums as $album){
             ?>

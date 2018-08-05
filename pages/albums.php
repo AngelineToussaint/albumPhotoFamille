@@ -2,7 +2,8 @@
     <div class="content">
         <h1>Mes Albums</h1>
         <?php
-        $albums = getAlbumsOfUser($_SESSION['user']['id']);
+
+        $albums = Album::getByUserId($_SESSION['user']['id']);
 
         foreach ($albums as $album){
             ?>

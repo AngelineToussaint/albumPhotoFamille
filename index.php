@@ -3,9 +3,13 @@ session_start();
 include 'Database.php';
 
 include 'functions/functions.php';
-include 'functions/fct_login.php';
-include 'functions/fct_register.php';
-include 'functions/fct_album.php';
+
+include 'classes/User.php';
+include 'classes/ShareAlbum.php';
+include 'classes/Album.php';
+include 'classes/Folder.php';
+include 'classes/Picture.php';
+include 'classes/Notification.php';
 
 include 'header.php';
 

@@ -1,9 +1,9 @@
 <div id="notification">
     <h1>Notifications</h1>
     <?php
-    removeNotifications();
+    Notification::removeNotifications($_SESSION['user']['id']);
 
-    $albums = getAlbumsShared();
+    $albums = ShareAlbum::getByUserId($_SESSION['user']['id']);
 
     foreach ($albums as $album){
         ?>
